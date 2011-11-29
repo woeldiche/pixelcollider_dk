@@ -1,0 +1,59 @@
+; ----- / BASIC INFO / -----
+
+name = 'pxl2011'
+description = 'Theme for pixelcollider.dk'
+core = '7.x'
+engine = 'phptemplate'
+screenshot = 'screenshot.png'
+base theme = 'omega'
+
+; ---- / REQUIRED REGIONS / -----
+
+regions[page_top] = "Page Top"
+regions[page_bottom] = "Page Bottom"
+regions[content] = "Content"
+
+
+; ----- / CUSTOM REGIONS / -----
+
+regions[menu] = Menu
+regions[branding] = Branding
+regions[search] = Search
+regions[preface_first] = Preface First
+regions[preface_second] = Preface Second
+regions[preface_third] = Preface Third
+regions[sidebar_first] = Sidebar First
+regions[sidebar_second] = Sidebar Second
+regions[postscript_first] = Postscript First
+regions[postscript_second] = Postscript Second
+regions[postscript_third] = Postscript Third
+regions[postscript_fourth] = Postscript Fourth
+regions[footer] = Footer
+
+
+; ----- / ZONES / -----
+
+zones[header] = Header
+zones[content] = Content
+zones[footer] = Footer
+zones[menu] = Menu
+zones[preface] = Preface
+zones[postscript] = Postscript
+
+
+; ----- / CUSTOM GRIDS / -----
+
+grids[itk_flexible][name] = Flexible Grid
+grids[itk_flexible][layouts][normal] = Normal
+grids[itk_flexible][layouts][small] = Mobile
+grids[itk_flexible][columns][12] = 12 Columns
+
+
+; ----- / OPTIONAL CSS / -----
+
+css[pxl.base.css][name] = 'Your custom global styles'
+css[pxl.base.css][description] = 'This file holds the custom typography for your theme.'
+css[pxl.base.css][options][weight] = '10'
+
+
+; ----- / DEFAULT SETTINGS / -----
