@@ -41,19 +41,16 @@ zones[preface] = Preface
 zones[postscript] = Postscript
 
 
-; ----- / CUSTOM GRIDS / -----
+; ----- / CSS / -----
 
-grids[itk_flexible][name] = Flexible Grid
-grids[itk_flexible][layouts][normal] = Normal
-grids[itk_flexible][layouts][small] = Mobile
-grids[itk_flexible][columns][12] = 12 Columns
+stylesheets[all][] = css/pxl.base.css
 
 
 ; ----- / OPTIONAL CSS / -----
 
-css[pxl.base.css][name] = 'Your custom global styles'
-css[pxl.base.css][description] = 'This file holds the custom typography for your theme.'
-css[pxl.base.css][options][weight] = '10'
+css[pxl.2011.css][name] = 'Your custom global styles'
+css[pxl.2011.css][description] = 'This file holds the custom typography for your theme.'
+css[pxl.2011.css][options][weight] = '10'
 
 
 ; ----- / DEFAULT SETTINGS / -----

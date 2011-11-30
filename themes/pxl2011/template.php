@@ -2,11 +2,23 @@
 
 /**
  * @file
- * This file is empty by default because the base theme chain (Alpha & Omega) provides
- * all the basic functionality. However, in case you wish to customize the output that Drupal
- * generates through Alpha & Omega this file is a good place to do so.
- * 
- * Alpha comes with a neat solution for keeping this file as clean as possible while the code
- * for your subtheme grows. Please read the README.txt in the /preprocess and /process subfolders
- * for more information on this topic.
  */
+ 
+ /**
+ * Implements hook_preprocess_page().
+ * Insert Typekit code in $script if enabled in theme settings.
+ */
+function pxl2011_preprocess_page(&$vars) {
+  // Check if typekit is enables and an ID has been defined.
+  if (theme_get_setting('typekit_kit_id') != '' && theme_get_setting('typekit_enable') == '1') {
+    // Create url to js
+    $typekit_url = '//use.typekit.com/' . theme_get_setting('typekit_kit_id') .'.js';
+    // Add Typekit js.
+    drupal_add_js($typekit_url,
+      array('type' => 'external', 'scope' => 'header', 'weight' => 9)
+    );
+    drupal_add_js('try{Typekit.load();}catch(e){}',
+      array('type' => 'inline', 'scope' => 'header', 'weight' => 10)
+    );
+  };
+}
