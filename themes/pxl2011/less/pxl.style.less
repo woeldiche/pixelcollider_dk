@@ -1,10 +1,61 @@
+// Basic structure, layout
+// -----------------------
 body {
-  background: @grayDark url(../images/bg-linen-black.png) left top repeat;
+  background: @grayDark url(../images/bg-linen-black.png) center top repeat;
   margin: 0;
-  #font > .sans-serif(normal,@basefont,@baseline);
-  color: @white;
+  #pxlfont > .sans-serif(400,@baseline);
+  font-size: @basefont;
+  color: @grayLight;
 }
 
+.page {
+  max-width: 940px;
+  padding: 24px 0 48px;
+}
+
+// Menus
+// -----------------------
+.menu a {
+  #pxlfont > .sans-serif(300,@baseline);
+  text-transform: uppercase;
+
+  &:link,
+  &:visited {
+    color: @grayLight;
+  }
+  &:hover,
+  &.active {
+    color: @white;
+  }
+}
+
+.inline {
+  list-style: none;
+  margin: 0;
+
+  li {
+    display: inline;
+    
+    a {
+      display: inline-block;
+      margin-right: 8px;
+      padding: 8px;
+    }  
+    .active {
+      .border-radius(2px);
+      font-weight: 600;
+      background: rgba(153, 153, 153, 0.15);
+    } 
+  }
+}
+
+.main-menu li {
+  font-size: 1.285714286em;
+}
+
+
+// Generic styles
+// -----------------------
 // Quick floats
 .pull-right {
   float: right;
