@@ -1,3 +1,11 @@
+// Styles
+// -----------------------
+.contentBox {
+  padding: 13px;
+  background: rgba(102, 102, 102, 0.1);
+  .border-radius(5px);
+}
+
 // Basic structure, layout
 // -----------------------
 body {
@@ -13,8 +21,33 @@ body {
   padding: 24px 0 48px;
 }
 
-// Menus
+.section-header {
+  margin-bottom: 63px;
+}
+
+.region-content {
+  .region-inner {
+    .contentBox;
+  }
+}
+
+// Branding
 // -----------------------
+.site-name {
+  a {
+    color: @gray;
+  }
+}
+
+// Navigation
+// -----------------------
+.breadcrumbs {
+  a {
+    padding: 0 @basespacing;
+  }
+  
+}
+
 .menu a {
   #pxlfont > .sans-serif(300,@baseline);
   text-transform: uppercase;
@@ -35,10 +68,10 @@ body {
 
   li {
     display: inline;
+    padding: 0 5px;
     
     a {
       display: inline-block;
-      margin-right: 8px;
       padding: 8px;
     }  
     .active {
@@ -47,10 +80,6 @@ body {
       background: rgba(153, 153, 153, 0.15);
     } 
   }
-}
-
-.main-menu li {
-  font-size: 1.285714286em;
 }
 
 
@@ -70,4 +99,9 @@ body {
 }
 .show {
   display: block;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }

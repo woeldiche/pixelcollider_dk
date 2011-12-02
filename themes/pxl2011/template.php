@@ -22,3 +22,61 @@ function pxl2011_preprocess_page(&$vars) {
     );
   };
 }
+
+
+/**
+ * Implements hook_breadcrumb().
+ *
+ * Add the current page title to the end of the breadcrumb.
+ */
+function pxl2011_breadcrumb($variables) {
+  $output = '';
+  $breadcrumb = $variables['breadcrumb'];
+
+  // Provide a navigational heading to give context for breadcrumb links to
+  // screen-reader users. Make the heading invisible with .element-invisible.
+  $output = '<h2 class="element-invisible">' . t('You are here') . '</h2>';
+  $output .= '<nav class="breadcrumbs">' . implode(' / ', $breadcrumb) . '</nav>';
+
+  return $output;
+}
+
+/**
+ * Implements hook_process_region().
+ *
+ * Makes breadcrumb,title and tabs available in content region for printing.
+ */
+function pxl2011_alpha_process_region(&$vars) {
+  if (in_array($vars['elements']['#region'], array('content'))) {
+    $theme = alpha_get_theme();
+    
+    switch ($vars['elements']['#region']) {
+      case 'content':
+        $vars['breadcrumb'] = $theme->page['breadcrumb'];
+        $vars['columns'] = $theme->page['page']['content']['content']['content']['#grid']['columns'];
+        break;
+    }
+  }
+}
+
+/**
+ * Implements hook_menu_local_tasks().
+ */
+function pxl2011_menu_local_tasks(&$vars) {
+  $output = '';
+
+  if (!empty($vars['primary'])) {
+    $vars['primary']['#prefix'] = '<h2 class="element-invisible">' . t('Primary tabs') . '</h2>';
+    $vars['primary']['#prefix'] .= '<ul class="pills primary clearfix">';
+    $vars['primary']['#suffix'] = '</ul>';
+    $output .= drupal_render($vars['primary']);
+  }
+  if (!empty($vars['secondary'])) {
+    $vars['secondary']['#prefix'] = '<h2 class="element-invisible">' . t('Secondary tabs') . '</h2>';
+    $vars['secondary']['#prefix'] .= '<ul class="pills secondary clearfix">';
+    $vars['secondary']['#suffix'] = '</ul>';
+    $output .= drupal_render($vars['secondary']);
+  }
+
+  return $output;
+}
