@@ -1,9 +1,16 @@
 // Styles
 // -----------------------
-.contentBox {
-  padding: 13px;
-  background: rgba(102, 102, 102, 0.1);
-  .border-radius(5px);
+#pxl {
+  .contentBox {
+    padding: 13px;
+    background: rgba(102, 102, 102, 0.1);
+    .border-radius(5px);
+  }
+  .hoverText {
+    background: rgba(153, 153, 153, 0.15);
+    color: @white;
+    text-decoration: none;
+  }
 }
 
 // Basic structure, layout
@@ -27,16 +34,28 @@ body {
 
 .region-content {
   .region-inner {
-    .contentBox;
+    #pxl > .contentBox;
   }
 }
 
 // Branding
 // -----------------------
 .site-name {
+  text-align: right;
+  padding: 0 5px;
+  
   a {
+    .border-radius(2px);
     color: @gray;
+    display: inline-block;
+    padding: 8px;
+    #pxl > .transition(background 0.3s ease);
+ 
+    &:hover {
+      #pxl > .hoverText;
+    }
   }
+  
 }
 
 // Navigation
@@ -51,6 +70,8 @@ body {
 .menu a {
   #pxlfont > .sans-serif(300,@baseline);
   text-transform: uppercase;
+  .border-radius(2px);
+  #pxl > .transition(background 0.3s ease);
 
   &:link,
   &:visited {
@@ -58,7 +79,10 @@ body {
   }
   &:hover,
   &.active {
-    color: @white;
+    #pxl > .hoverText;
+  }
+  &.active {
+    font-weight: 600;
   }
 }
 
@@ -74,11 +98,6 @@ body {
       display: inline-block;
       padding: 8px;
     }  
-    .active {
-      .border-radius(2px);
-      font-weight: 600;
-      background: rgba(153, 153, 153, 0.15);
-    } 
   }
 }
 

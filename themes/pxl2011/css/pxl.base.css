@@ -2279,12 +2279,17 @@ a:hover {
 .main-menu li {
   font-size: 18.000000004px;
 }
-.contentBox {
+#pxl .contentBox {
   padding: 13px;
   background: rgba(102, 102, 102, 0.1);
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+}
+#pxl .hoverText {
+  background: rgba(153, 153, 153, 0.15);
+  color: #dddddd;
+  text-decoration: none;
 }
 body {
   background: #404040 url(../images/bg-linen-black.png) center top repeat;
@@ -2309,8 +2314,27 @@ body {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
+.site-name {
+  text-align: right;
+  padding: 0 5px;
+}
 .site-name a {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
   color: #9b9b9b;
+  display: inline-block;
+  padding: 8px;
+  -webkit-transition: background 0.3s ease;
+  -moz-transition: background 0.3s ease;
+  -ms-transition: background 0.3s ease;
+  -o-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+}
+.site-name a:hover {
+  background: rgba(153, 153, 153, 0.15);
+  color: #dddddd;
+  text-decoration: none;
 }
 .breadcrumbs a {
   padding: 0 13px;
@@ -2320,12 +2344,25 @@ body {
   font-weight: 300;
   line-height: 18px;
   text-transform: uppercase;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-transition: background 0.3s ease;
+  -moz-transition: background 0.3s ease;
+  -ms-transition: background 0.3s ease;
+  -o-transition: background 0.3s ease;
+  transition: background 0.3s ease;
 }
 .menu a:link, .menu a:visited {
   color: #bfbfbf;
 }
 .menu a:hover, .menu a.active {
+  background: rgba(153, 153, 153, 0.15);
   color: #dddddd;
+  text-decoration: none;
+}
+.menu a.active {
+  font-weight: 600;
 }
 .inline {
   list-style: none;
@@ -2338,13 +2375,6 @@ body {
 .inline li a {
   display: inline-block;
   padding: 8px;
-}
-.inline li .active {
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  font-weight: 600;
-  background: rgba(153, 153, 153, 0.15);
 }
 .pull-right {
   float: right;
