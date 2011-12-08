@@ -52,5 +52,9 @@ css[pxl.2011.css][name] = 'Your custom global styles'
 css[pxl.2011.css][description] = 'This file holds the custom typography for your theme.'
 css[pxl.2011.css][options][weight] = '10'
 
+; ----- / SCRIPTS / -----
+scripts[] = js/pxl.common.js
+scripts[] = js/bootstrap-alerts.js
+
 
 ; ----- / DEFAULT SETTINGS / -----
