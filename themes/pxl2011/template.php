@@ -80,3 +80,21 @@ function pxl2011_menu_local_tasks(&$vars) {
 
   return $output;
 }
+
+/**
+ * Implements template_preprocess_field.
+ *
+ * Style selected field to appear like blocks.
+ */
+function pxl2011_preprocess_field(&$vars, $hook) {
+  switch ($vars['element']['#field_name']) {
+    case 'field_tasks':
+       $vars['theme_hook_suggestions'][] = 'field__taxonomy_list';
+       $vars['classes_array'][] = 'text-secondary';
+       $vars['classes_array'][] = 'slash-list';
+      break;
+
+    default:
+      break;
+  }
+}

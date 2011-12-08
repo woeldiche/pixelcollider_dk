@@ -24,6 +24,7 @@ body {
 }
 
 .page {
+  margin: 0 auto;
   max-width: 940px;
   padding: 24px 0 48px;
 }
@@ -41,8 +42,9 @@ body {
 // Branding
 // -----------------------
 .site-name {
-  text-align: right;
+  font-size: @fontMedium;
   padding: 0 5px;
+  text-align: right;
   
   a {
     .border-radius(2px);
@@ -51,11 +53,11 @@ body {
     padding: 8px;
     #pxl > .transition(background 0.3s ease);
  
-    &:hover {
+    &:hover,
+    &.active {
       #pxl > .hoverText;
     }
   }
-  
 }
 
 // Navigation
@@ -67,11 +69,13 @@ body {
   
 }
 
-.menu a {
+.menu a,
+.pills a {
   #pxlfont > .sans-serif(300,@baseline);
   text-transform: uppercase;
   .border-radius(2px);
   #pxl > .transition(background 0.3s ease);
+  text-shadow: none;
 
   &:link,
   &:visited {
@@ -86,7 +90,8 @@ body {
   }
 }
 
-.inline {
+.inline,
+.pills {
   list-style: none;
   margin: 0;
 
@@ -101,9 +106,44 @@ body {
   }
 }
 
+// Tabs (pills)
+.region-content {
+  & > .pills {
+    #pxl > .transition(all 0.3s ease);
+    padding-bottom: 10px;
+    position: absolute;
+    .opacity(0);
+    top: -50px;
+    visibility: hidden;
+    width: 99%;
+
+    &:hover {
+      visibility: visible;
+      .opacity(100);
+    }
+  }
+  &:hover > .pills {
+    visibility: visible;
+    .opacity(100);
+  }
+}
+
 
 // Generic styles
 // -----------------------
+// Slash divived lists
+.slash-list {
+  li {
+    padding: 0 0 0 9px;
+    background: transparent url('../images/pxl2011-sprites.png') no-repeat -2px -379px;
+  }
+  .term-0 {
+    padding: 0;
+    background: transparent;
+  }
+}
+
+
 // Quick floats
 .pull-right {
   float: right;

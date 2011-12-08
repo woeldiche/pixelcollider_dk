@@ -2263,6 +2263,9 @@ h6 {
   margin-bottom: 1em;
   padding: 0 13px;
 }
+.text-secondary {
+  color: #9b9b9b;
+}
 h2 {
   font-size: 18.000000004px;
 }
@@ -2301,6 +2304,7 @@ body {
   color: #bfbfbf;
 }
 .page {
+  margin: 0 auto;
   max-width: 940px;
   padding: 24px 0 48px;
 }
@@ -2315,8 +2319,9 @@ body {
   border-radius: 5px;
 }
 .site-name {
-  text-align: right;
+  font-size: 18.000000004px;
   padding: 0 5px;
+  text-align: right;
 }
 .site-name a {
   -webkit-border-radius: 2px;
@@ -2331,7 +2336,7 @@ body {
   -o-transition: background 0.3s ease;
   transition: background 0.3s ease;
 }
-.site-name a:hover {
+.site-name a:hover, .site-name a.active {
   background: rgba(153, 153, 153, 0.15);
   color: #dddddd;
   text-decoration: none;
@@ -2339,7 +2344,7 @@ body {
 .breadcrumbs a {
   padding: 0 13px;
 }
-.menu a {
+.menu a, .pills a {
   font-family: freight-sans-pro, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   line-height: 18px;
@@ -2352,29 +2357,74 @@ body {
   -ms-transition: background 0.3s ease;
   -o-transition: background 0.3s ease;
   transition: background 0.3s ease;
+  text-shadow: none;
 }
-.menu a:link, .menu a:visited {
+.menu a:link,
+.pills a:link,
+.menu a:visited,
+.pills a:visited {
   color: #bfbfbf;
 }
-.menu a:hover, .menu a.active {
+.menu a:hover,
+.pills a:hover,
+.menu a.active,
+.pills a.active {
   background: rgba(153, 153, 153, 0.15);
   color: #dddddd;
   text-decoration: none;
 }
-.menu a.active {
+.menu a.active, .pills a.active {
   font-weight: 600;
 }
-.inline {
+.inline, .pills {
   list-style: none;
   margin: 0;
 }
-.inline li {
+.inline li, .pills li {
   display: inline;
   padding: 0 5px;
 }
-.inline li a {
+.inline li a, .pills li a {
   display: inline-block;
   padding: 8px;
+}
+.region-content  > .pills {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  padding-bottom: 10px;
+  position: absolute;
+  filter: alpha(opacity=0);
+  -khtml-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+  top: -50px;
+  visibility: hidden;
+  width: 99%;
+}
+.region-content  > .pills:hover {
+  visibility: visible;
+  filter: alpha(opacity=100);
+  -khtml-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+}
+.region-content:hover > .pills {
+  visibility: visible;
+  filter: alpha(opacity=100);
+  -khtml-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+}
+.slash-list li {
+  padding: 0 0 0 9px;
+  background: transparent url('../images/pxl2011-sprites.png') no-repeat -2px -379px;
+}
+.slash-list .term-0 {
+  padding: 0;
+  background: transparent;
 }
 .pull-right {
   float: right;
