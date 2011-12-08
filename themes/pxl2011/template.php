@@ -90,9 +90,13 @@ function pxl2011_preprocess_field(&$vars, $hook) {
   switch ($vars['element']['#field_name']) {
     case 'field_tasks':
        $vars['theme_hook_suggestions'][] = 'field__taxonomy_list';
+       $vars['classes_array'] = array();
        $vars['classes_array'][] = 'text-secondary';
        $vars['classes_array'][] = 'slash-list';
       break;
+    case 'field_status':
+      $vars['classes_array'] = array();
+      $vars['classes_array'][] = 'text-secondary';
 
     default:
       break;

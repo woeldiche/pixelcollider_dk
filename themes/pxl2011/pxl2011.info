@@ -53,8 +53,8 @@ css[pxl.2011.css][description] = 'This file holds the custom typography for your
 css[pxl.2011.css][options][weight] = '10'
 
 ; ----- / SCRIPTS / -----
-scripts[] = js/pxl.common.js
 scripts[] = js/bootstrap-alerts.js
+scripts[] = js/pxl.common.js
 
 
 ; ----- / DEFAULT SETTINGS / -----
