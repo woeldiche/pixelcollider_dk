@@ -2269,6 +2269,10 @@ h6 {
 h2 {
   font-size: 18.000000004px;
 }
+h2.content-heading {
+  line-height: 36px;
+  margin: 18px 0 0;
+}
 a {
   color: #0099cc;
   text-decoration: none;
@@ -2283,7 +2287,7 @@ a:hover {
   font-size: 18.000000004px;
 }
 #pxl .contentBox {
-  padding: 13px;
+  padding: 13px 13px 19.5px;
   background: rgba(102, 102, 102, 0.1);
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -2311,12 +2315,17 @@ body {
 .section-header {
   margin-bottom: 63px;
 }
-.region-content .region-inner {
-  padding: 13px;
+.region-content  > .block {
+  padding: 13px 13px 19.5px;
   background: rgba(102, 102, 102, 0.1);
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+}
+.region-content footer {
+  margin: 0 0 26px;
+  padding-top: 0;
+  border: none;
 }
 .site-name {
   font-size: 18.000000004px;
@@ -2342,7 +2351,10 @@ body {
   text-decoration: none;
 }
 .breadcrumbs a {
-  padding: 0 13px;
+  padding: 0 6.5px;
+}
+.breadcrumbs h2 + a {
+  padding-left: 13px;
 }
 .menu a, .pills a {
   font-family: freight-sans-pro, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -2597,6 +2609,10 @@ body {
 .slash-list .term-0 {
   padding: 0;
   background: transparent;
+}
+.slashed {
+  padding: 0 0 0 9px;
+  background: transparent url('../images/pxl2011-sprites.png') no-repeat -2px -379px;
 }
 .pull-right {
   float: right;

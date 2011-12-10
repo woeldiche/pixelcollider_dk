@@ -16,7 +16,14 @@ h1,h2,h3,h4,h5,h6 {
 
 h2 {
   font-size: @fontMedium;
+
+  &.content-heading {
+    line-height: 2 *@baseline;
+    margin: @baseline 0 0;
+  }
 }
+
+
 
 // Links
 a {

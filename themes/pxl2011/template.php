@@ -36,10 +36,29 @@ function pxl2011_breadcrumb($variables) {
   // Provide a navigational heading to give context for breadcrumb links to
   // screen-reader users. Make the heading invisible with .element-invisible.
   $output = '<h2 class="element-invisible">' . t('You are here') . '</h2>';
-  $output .= '<nav class="breadcrumbs">' . implode(' / ', $breadcrumb) . '</nav>';
+  $output .= implode(' / ', $breadcrumb);
 
   return $output;
 }
+
+/**
+ * Implements hook_preprocess_region().
+ *
+ * Makes breadcrumb,title and tabs available in content region for printing.
+ */
+function pxl2011_alpha_preprocess_region(&$vars) {
+  if (in_array($vars['elements']['#region'], array('breadcrumb'))) {
+    $theme = alpha_get_theme();
+    
+    switch ($vars['elements']['#region']) {
+      case 'breadcrumb':
+        $vars['attributes_array']['class'][] = 'breadcrumbs';
+        $vars['breadcrumb'] = $theme->page['breadcrumb'];
+        break;
+    }
+  }
+}
+
 
 /**
  * Implements hook_process_region().
@@ -47,13 +66,11 @@ function pxl2011_breadcrumb($variables) {
  * Makes breadcrumb,title and tabs available in content region for printing.
  */
 function pxl2011_alpha_process_region(&$vars) {
-  if (in_array($vars['elements']['#region'], array('content'))) {
+  if (in_array($vars['elements']['#region'], array('breadcrumb'))) {
     $theme = alpha_get_theme();
     
     switch ($vars['elements']['#region']) {
-      case 'content':
-        $vars['breadcrumb'] = $theme->page['breadcrumb'];
-        $vars['columns'] = $theme->page['page']['content']['content']['content']['#grid']['columns'];
+      case 'breadcrumb':
         break;
     }
   }
@@ -91,13 +108,18 @@ function pxl2011_preprocess_field(&$vars, $hook) {
     case 'field_tasks':
        $vars['theme_hook_suggestions'][] = 'field__taxonomy_list';
        $vars['classes_array'] = array();
-       $vars['classes_array'][] = 'text-secondary';
+       //$vars['classes_array'][] = 'text-secondary';
        $vars['classes_array'][] = 'slash-list';
       break;
     case 'field_status':
       $vars['classes_array'] = array();
-      $vars['classes_array'][] = 'text-secondary';
-
+      //$vars['classes_array'][] = 'text-secondary';
+      break;
+      
+    case 'field_link': 
+      $vars['classes_array'] = array();
+      $vars['classes_array'][] = 'slashed';
+          
     default:
       break;
   }

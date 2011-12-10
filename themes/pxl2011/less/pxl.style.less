@@ -2,7 +2,7 @@
 // -----------------------
 #pxl {
   .contentBox {
-    padding: 13px;
+    padding: @basespacing @basespacing (@basespacing * 1.5);
     background: rgba(102, 102, 102, 0.1);
     .border-radius(5px);
   }
@@ -34,8 +34,13 @@ body {
 }
 
 .region-content {
-  .region-inner {
+  & > .block {
     #pxl > .contentBox;
+  }
+  footer {
+    margin: 0 0 (2*@basespacing);
+    padding-top: 0;
+    border: none;
   }
 }
 
@@ -64,7 +69,10 @@ body {
 // -----------------------
 .breadcrumbs {
   a {
-    padding: 0 @basespacing;
+    padding: 0 (@basespacing/2);
+  }
+  h2 + a {
+    padding-left: @basespacing;
   }
 }
 
@@ -165,7 +173,6 @@ body {
 
 // Messages
 // -----------------------
-
 // Base alert styles
 .messages {
   position: relative;
@@ -262,8 +269,6 @@ body {
   }
 }
 
-
-
 // Generic styles
 // -----------------------
 // Slash divived lists
@@ -276,6 +281,11 @@ body {
     padding: 0;
     background: transparent;
   }
+}
+
+.slashed {
+  padding: 0 0 0 9px;
+    background: transparent url('../images/pxl2011-sprites.png') no-repeat -2px -379px;
 }
 
 
