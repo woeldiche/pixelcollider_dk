@@ -2266,6 +2266,16 @@ h6 {
 .text-secondary {
   color: #9b9b9b;
 }
+.text-aside {
+  font-family: "museo-slab", "Georgia", serif;
+  font-weight: 100;
+  line-height: 1.428571429em;
+}
+.text-aside p {
+  font-family: "museo-slab", "Georgia", serif;
+  font-weight: 100;
+  line-height: 1.428571429em;
+}
 h2 {
   font-size: 18.000000004px;
 }
@@ -2285,6 +2295,9 @@ a:hover {
 }
 .main-menu li {
   font-size: 18.000000004px;
+}
+.region-sidebar-second {
+  text-align: right;
 }
 #pxl .contentBox {
   padding: 13px 13px 19.5px;
@@ -2315,17 +2328,17 @@ body {
 .section-header {
   margin-bottom: 63px;
 }
+.zone-content footer {
+  margin: 0 0 26px;
+  padding-top: 0;
+  border: none;
+}
 .region-content  > .block {
   padding: 13px 13px 19.5px;
   background: rgba(102, 102, 102, 0.1);
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-}
-.region-content footer {
-  margin: 0 0 26px;
-  padding-top: 0;
-  border: none;
 }
 .site-name {
   font-size: 18.000000004px;

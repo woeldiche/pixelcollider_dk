@@ -47,13 +47,18 @@ function pxl2011_breadcrumb($variables) {
  * Makes breadcrumb,title and tabs available in content region for printing.
  */
 function pxl2011_alpha_preprocess_region(&$vars) {
-  if (in_array($vars['elements']['#region'], array('breadcrumb'))) {
+  if (in_array($vars['elements']['#region'], array('breadcrumb','sidebar_second'))) {
     $theme = alpha_get_theme();
     
     switch ($vars['elements']['#region']) {
       case 'breadcrumb':
         $vars['attributes_array']['class'][] = 'breadcrumbs';
         $vars['breadcrumb'] = $theme->page['breadcrumb'];
+        break;
+      case 'sidebar_second':
+        $vars['site_slogan'] = $theme->page['site_slogan'];      
+        $vars['site_slogan_hidden'] = $theme->page['site_slogan_hidden'];
+        $vars['attributes_array']['class'][] = 'text-aside';
         break;
     }
   }
