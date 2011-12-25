@@ -23,6 +23,10 @@ body {
   color: @grayLight;
 }
 
+footer {
+  border: none;  
+}
+
 .page {
   margin: 0 auto;
   max-width: 940px;
@@ -37,7 +41,6 @@ body {
   footer {
     margin: 0 0 (2*@basespacing);
     padding-top: 0;
-    border: none;
   }
 }
 
@@ -46,6 +49,7 @@ body {
     #pxl > .contentBox;
   }
 }
+
 
 
 
@@ -64,7 +68,8 @@ body {
     #pxl > .transition(background 0.3s ease);
  
     &:hover,
-    &.active {
+    &.active,
+    &.active-trail {
       #pxl > .hoverText;
     }
   }
@@ -94,10 +99,12 @@ body {
     color: @grayLight;
   }
   &:hover,
-  &.active {
+  &.active,
+  &.active-trail {
     #pxl > .hoverText;
   }
-  &.active {
+  &.active,
+  &.active-trail {
     font-weight: 600;
   }
 }
@@ -125,7 +132,7 @@ body {
     padding-bottom: 10px;
     position: absolute;
     .opacity(0);
-    top: -50px;
+    top: -66px;
     visibility: hidden;
     width: 99%;
 

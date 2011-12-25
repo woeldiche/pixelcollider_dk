@@ -70,8 +70,8 @@ function pxl2011_alpha_preprocess_region(&$vars) {
  *
  * Makes breadcrumb,title and tabs available in content region for printing.
  */
-function pxl2011_alpha_process_region(&$vars) {
-  if (in_array($vars['elements']['#region'], array('breadcrumb'))) {
+/*function pxl2011_alpha_process_region(&$vars) {
+  if (in_array($vars['elements']['#region'], array('breadcrumb', 'sidebar_second'))) {
     $theme = alpha_get_theme();
     
     switch ($vars['elements']['#region']) {
@@ -79,7 +79,7 @@ function pxl2011_alpha_process_region(&$vars) {
         break;
     }
   }
-}
+}*/
 
 /**
  * Implements hook_menu_local_tasks().

@@ -2320,6 +2320,9 @@ body {
   font-size: 14px;
   color: #bfbfbf;
 }
+footer {
+  border: none;
+}
 .page {
   margin: 0 auto;
   max-width: 940px;
@@ -2331,7 +2334,6 @@ body {
 .zone-content footer {
   margin: 0 0 26px;
   padding-top: 0;
-  border: none;
 }
 .region-content  > .block {
   padding: 13px 13px 19.5px;
@@ -2358,7 +2360,7 @@ body {
   -o-transition: background 0.3s ease;
   transition: background 0.3s ease;
 }
-.site-name a:hover, .site-name a.active {
+.site-name a:hover, .site-name a.active, .site-name a.active-trail {
   background: rgba(153, 153, 153, 0.15);
   color: #dddddd;
   text-decoration: none;
@@ -2393,12 +2395,17 @@ body {
 .menu a:hover,
 .pills a:hover,
 .menu a.active,
-.pills a.active {
+.pills a.active,
+.menu a.active-trail,
+.pills a.active-trail {
   background: rgba(153, 153, 153, 0.15);
   color: #dddddd;
   text-decoration: none;
 }
-.menu a.active, .pills a.active {
+.menu a.active,
+.pills a.active,
+.menu a.active-trail,
+.pills a.active-trail {
   font-weight: 600;
 }
 .inline, .pills {
@@ -2425,7 +2432,7 @@ body {
   -khtml-opacity: 0;
   -moz-opacity: 0;
   opacity: 0;
-  top: -50px;
+  top: -66px;
   visibility: hidden;
   width: 99%;
 }
